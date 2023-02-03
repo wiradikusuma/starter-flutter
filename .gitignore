@@ -1,4 +1,6 @@
 /.dart_tool
 /.idea
 /build
+.flutter-plugins
+.flutter-plugins-dependencies
 *.iml
