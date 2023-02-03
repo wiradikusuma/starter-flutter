@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.11.0
   flutter_test:
     sdk: flutter
 
@@ -88,3 +89,22 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_icons:
+  android: true
+  image_path_android: 'assets/icons/android.png'
+  adaptive_icon_background: '#00ff00'
+  adaptive_icon_foreground: 'assets/icons/android-foreground.png'
+
+  ios: true
+  image_path_ios: 'assets/icons/ios.png'
+
+  macos:
+    generate: true
+    image_path: 'assets/icons/macos.png'
+
+  web:
+    generate: true
+    image_path: 'assets/icons/web.png'
+    background_color: '#00ff00'
+    theme_color: '#00ff00'
