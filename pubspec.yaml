@@ -12,12 +12,13 @@ dependencies:
   flutter_native_splash: ^2.2.17
 
 dependency_overrides:
-  # flutter_launcher_icons@0.11.x requires image@3.x while
+  # flutter_flavorizr@2.1.x and flutter_launcher_icons@0.11.x requires image@3.x while
   # flutter_native_splash@2.2.x requires image@4.x — comment accordingly
-  #image: ^3.3.0
-  image: ^4.0.13
+  image: ^3.3.0
+  #image: ^4.0.13
 
 dev_dependencies:
+  flutter_flavorizr: ^2.1.5
   flutter_launcher_icons: ^0.11.0
   flutter_lints: ^2.0.1
   flutter_test:
@@ -57,3 +58,28 @@ flutter_native_splash:
     color: '#0ff000'
     image: 'assets/splash/logo_android12.png'
     branding: 'assets/splash/branding.png'
+
+# https://pub.dev/packages/flutter_flavorizr
+flavorizr:
+  flavors:
+    flavor_test:
+      app:
+        name: 'Starter TEST'
+      android:
+        applicationId: 'com.example.starter_flutter.test'
+        generateDummyAssets: false
+        customConfig:
+          versionNameSuffix: '"-TEST"'
+      ios:
+        bundleId: 'com.example.starter_flutter.test'
+        generateDummyAssets: false
+
+    flavor_prod:
+      app:
+        name: 'Starter'
+      android:
+        applicationId: 'com.example.starter_flutter'
+        generateDummyAssets: false
+      ios:
+        bundleId: 'com.example.starter_flutter'
+        generateDummyAssets: false

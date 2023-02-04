@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-void main() {
+import 'env.dart';
+
+late Env temp;
+
+void run(Env env) async {
+  temp = env;
+
   // Keep native splash screen up until app is finished bootstrapping
   FlutterNativeSplash.preserve(widgetsBinding: WidgetsFlutterBinding.ensureInitialized());
 
@@ -31,7 +37,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: temp.server),
     );
   }
 }
