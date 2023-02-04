@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
+  // Keep native splash screen up until app is finished bootstrapping
+  FlutterNativeSplash.preserve(widgetsBinding: WidgetsFlutterBinding.ensureInitialized());
+
   runApp(const MyApp());
+
+  // Remove splash screen when bootstrap is complete
+  FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatelessWidget {

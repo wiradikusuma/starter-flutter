@@ -9,6 +9,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.2.17
+
+dependency_overrides:
+  # flutter_launcher_icons@0.11.x requires image@3.x while
+  # flutter_native_splash@2.2.x requires image@4.x — comment accordingly
+  #image: ^3.3.0
+  image: ^4.0.13
 
 dev_dependencies:
   flutter_launcher_icons: ^0.11.0
@@ -38,3 +45,15 @@ flutter_icons:
     image_path: 'assets/icons/web.png'
     background_color: '#00ff00'
     theme_color: '#00ff00'
+
+# https://pub.dev/packages/flutter_native_splash
+flutter_native_splash:
+  color: '#0ff000'
+  image: 'assets/splash/logo.png'
+  branding: 'assets/splash/branding.png'
+
+  # https://developer.android.com/guide/topics/ui/splash-screen
+  android_12:
+    color: '#0ff000'
+    image: 'assets/splash/logo_android12.png'
+    branding: 'assets/splash/branding.png'
