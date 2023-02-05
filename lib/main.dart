@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import 'env.dart';
+import 'l10n/strings.dart';
 
 late Env temp;
 
@@ -25,6 +26,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: MyHomePage(title: temp.server),
+      localizationsDelegates: S.localizationsDelegates,
+      supportedLocales: S.supportedLocales,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -107,6 +110,9 @@ class _MyHomePageState extends State<MyHomePage> {
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
           children: <Widget>[
+            _info(context),
+            _localizedMessage(context),
+            _alwaysInFrench(context),
             const Text(
               'You have pushed the button this many times:',
             ),
@@ -123,6 +129,36 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+
+  Widget _info(BuildContext context) {
+    final locale = Localizations.localeOf(context);
+
+    return Text(
+      'Locale: $locale.\nChange between English/Chinese in phone settings.\nCalendar is always in French.\n',
+      textAlign: TextAlign.center,
+    );
+  }
+
+  Widget _localizedMessage(BuildContext context) {
+    return Text(S.of(context).greeting('Flutter'));
+  }
+
+  Widget _alwaysInFrench(BuildContext context) {
+    return Localizations.override(
+      child: Builder(
+        builder: (context) {
+          return CalendarDatePicker(
+            initialDate: DateTime.now(),
+            firstDate: DateTime(1900),
+            lastDate: DateTime(2100),
+            onDateChanged: (value) {},
+          );
+        },
+      ),
+      context: context,
+      locale: const Locale.fromSubtags(languageCode: 'fr'),
     );
   }
 }

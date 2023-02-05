@@ -1,0 +1,6 @@
+nullable-getter: false
+output-class: S
+output-localization-file: strings.dart
+synthetic-package: false
+template-arb-file: strings_en.arb
+untranslated-messages-file: untranslated.txt

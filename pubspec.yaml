@@ -9,7 +9,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   flutter_native_splash: ^2.2.17
+  intl: any
 
 dependency_overrides:
   # flutter_flavorizr@2.1.x and flutter_launcher_icons@0.11.x requires image@3.x while
@@ -25,6 +28,7 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
+  generate: true
   uses-material-design: true
 
 # https://pub.dev/packages/flutter_launcher_icons

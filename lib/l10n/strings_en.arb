@@ -1,0 +1,12 @@
+{
+  "greeting": "Hello {name}!",
+  "@greeting": {
+    "description": "Demonstration of Flutter l18n support.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Bob"
+      }
+    }
+  }
+}

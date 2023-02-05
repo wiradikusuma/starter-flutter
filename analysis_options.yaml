@@ -8,6 +8,7 @@
 analyzer:
   exclude:
     - lib/**/*.g.dart
+    - lib/l10n/*.dart
 
 # The following line activates a set of recommended lints for Flutter apps,
 # packages, and plugins designed to encourage good coding practices.
