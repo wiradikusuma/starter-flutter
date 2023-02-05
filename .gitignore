@@ -5,3 +5,4 @@
 .flutter-plugins-dependencies
 *.iml
 /lib/main_dev.dart
+.DS_Store
