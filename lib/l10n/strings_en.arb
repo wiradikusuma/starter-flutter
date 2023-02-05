@@ -8,5 +8,10 @@
         "example": "Bob"
       }
     }
-  }
+  },
+  "detail_cta": "Save",
+  "detail_cta_successful": "Successfully saved!",
+  "index_login": "Log In",
+  "index_logout": "Log Out",
+  "login_cta": "Log In"
 }

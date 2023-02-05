@@ -98,6 +98,36 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Hello {name}!'**
   String greeting(String name);
+
+  /// No description provided for @detail_cta.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get detail_cta;
+
+  /// No description provided for @detail_cta_successful.
+  ///
+  /// In en, this message translates to:
+  /// **'Successfully saved!'**
+  String get detail_cta_successful;
+
+  /// No description provided for @index_login.
+  ///
+  /// In en, this message translates to:
+  /// **'Log In'**
+  String get index_login;
+
+  /// No description provided for @index_logout.
+  ///
+  /// In en, this message translates to:
+  /// **'Log Out'**
+  String get index_logout;
+
+  /// No description provided for @login_cta.
+  ///
+  /// In en, this message translates to:
+  /// **'Log In'**
+  String get login_cta;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

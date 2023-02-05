@@ -8,4 +8,19 @@ class SEn extends S {
   String greeting(String name) {
     return 'Hello $name!';
   }
+
+  @override
+  String get detail_cta => 'Save';
+
+  @override
+  String get detail_cta_successful => 'Successfully saved!';
+
+  @override
+  String get index_login => 'Log In';
+
+  @override
+  String get index_logout => 'Log Out';
+
+  @override
+  String get login_cta => 'Log In';
 }
