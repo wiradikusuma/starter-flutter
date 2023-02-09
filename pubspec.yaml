@@ -30,6 +30,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   go_router_builder: any
+  integration_test:
+    sdk: flutter
 
 flutter:
   generate: true

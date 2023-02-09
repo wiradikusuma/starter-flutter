@@ -38,23 +38,24 @@ class _State extends State<IndexPage> {
         if (!tempLoggedIn)
           ElevatedButton(
             child: Text(s.index_login),
-
+            key: const Key('Login'),
             onPressed: () => _login(context),
             style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
           ).padded(8),
         ElevatedButton(
           child: const Text('Detail  1'),
+          key: const Key('Detail 1'),
           onPressed: () => _goDetail1(context),
         ).padded(8),
         ElevatedButton(
           child: const Text('Authenticated'),
-
+          key: const Key('Authenticated'),
           onPressed: () => _goAuthenticated(context),
         ).padded(8),
         if (tempLoggedIn)
           ElevatedButton(
             child: Text(s.index_logout),
-
+            key: const Key('Logout'),
             onPressed: () => _logout(context),
             style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
           ).padded(8),
