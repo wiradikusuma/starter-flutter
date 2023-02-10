@@ -67,6 +67,20 @@ void main() {
       expect(find.text(s.detail_cta_successful), findsOneWidget);
     });
   });
+
+  group('Tabs', () {
+    testWidgets(
+        'GIVEN user is on the Index page '
+        'WHEN user taps Articles in the navigation '
+        'THEN user is presented with the Articles tab ', (tester) async {
+      await _boot(tester);
+
+      await tester.tap(find.text('Articles'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Articles tab'), findsOneWidget);
+    });
+  });
 }
 
 Future<void> _boot(WidgetTester tester) async {

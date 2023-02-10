@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:starter_flutter/util/layout_utils.dart';
 
 import '../l10n/strings.dart';
@@ -13,21 +14,45 @@ class IndexPage extends StatefulWidget {
 }
 
 class _State extends State<IndexPage> {
+  var _selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Index. Logged in: $tempLoggedIn'),
-      ),
-      body: Column(
-        children: [
-          _buttons(context).bPadded(),
-          _info(context),
-          _localizedMessage(context).vPadded(),
-          _alwaysInFrench(context),
-        ],
-      ),
+    return AdaptiveScaffold(
+      body: (context) => _body(context),
+      destinations: const [
+        NavigationDestination(icon: Icon(Icons.inbox), label: 'Inbox'),
+        NavigationDestination(icon: Icon(Icons.article), label: 'Articles'),
+      ],
+      onSelectedIndexChange: (idx) => setState(() => _selectedIndex = idx),
+      selectedIndex: _selectedIndex,
+      smallBody: (_) => _body(context),
+      smallSecondaryBody: AdaptiveScaffold.emptyBuilder,
+      useDrawer: false,
     );
+  }
+
+  Widget _body(BuildContext context) {
+    switch (_selectedIndex) {
+      case 0:
+        return SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Text('Index. Logged in: $tempLoggedIn'),
+                _buttons(context).bPadded(),
+                _info(context),
+                _localizedMessage(context).vPadded(),
+                _alwaysInFrench(context),
+              ],
+            ),
+          ),
+        );
+      case 1:
+        return const Center(child: Text('Articles tab'));
+      default:
+        throw Exception('Undefined');
+    }
   }
 
   Widget _buttons(BuildContext context) {
