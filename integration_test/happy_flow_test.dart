@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:starter_flutter/env.dart';
-import 'package:starter_flutter/l10n/strings.dart';
-import 'package:starter_flutter/main.dart' as app;
+import 'package:app/env.dart';
+import 'package:app/l10n/strings.dart';
+import 'package:app/main.dart' as app;
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();

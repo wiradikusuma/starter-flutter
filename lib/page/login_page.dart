@@ -1,8 +1,7 @@
+import 'package:app/l10n/strings.dart';
+import 'package:app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-import '../l10n/strings.dart';
-import '../main.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});

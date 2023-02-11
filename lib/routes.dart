@@ -1,14 +1,13 @@
 import 'dart:async';
 
+import 'package:app/main.dart';
+import 'package:app/page/authenticated_page.dart';
+import 'package:app/page/detail_page.dart';
+import 'package:app/page/index_page.dart';
+import 'package:app/page/login_page.dart';
+import 'package:app/page/onboarding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-import 'main.dart';
-import 'page/authenticated_page.dart';
-import 'page/detail_page.dart';
-import 'page/index_page.dart';
-import 'page/login_page.dart';
-import 'page/onboarding_page.dart';
 
 part 'routes.g.dart';
 

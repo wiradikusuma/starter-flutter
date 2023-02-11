@@ -1,5 +1,5 @@
-import 'env.dart';
-import 'main.dart';
+import 'package:app/env.dart';
+import 'package:app/main.dart';
 
 void main() {
   run(Env(

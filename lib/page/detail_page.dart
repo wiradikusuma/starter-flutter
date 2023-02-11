@@ -1,9 +1,8 @@
+import 'package:app/l10n/strings.dart';
+import 'package:app/main.dart';
+import 'package:app/page/login_page.dart';
+import 'package:app/util/routing_utils.dart';
 import 'package:flutter/material.dart';
-
-import '../l10n/strings.dart';
-import '../main.dart';
-import '../util/routing_utils.dart';
-import 'login_page.dart';
 
 class DetailPage extends StatefulWidget {
   final String id;

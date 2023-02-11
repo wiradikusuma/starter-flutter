@@ -1,10 +1,9 @@
+import 'package:app/l10n/strings.dart';
+import 'package:app/main.dart';
+import 'package:app/routes.dart';
+import 'package:app/util/layout_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
-import 'package:starter_flutter/util/layout_utils.dart';
-
-import '../l10n/strings.dart';
-import '../main.dart';
-import '../routes.dart';
 
 class IndexPage extends StatefulWidget {
   const IndexPage({super.key});
