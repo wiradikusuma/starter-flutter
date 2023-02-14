@@ -1,4 +1,5 @@
 {
+  "error_required": "{field} is required",
   "greeting": "Hello {name}!",
   "@greeting": {
     "description": "Demonstration of Flutter l18n support.",
@@ -9,6 +10,8 @@
       }
     }
   },
+  "detail_fyi": "Hi {name}, please edit your details below.",
+  "detail_name": "Name",
   "detail_cta": "Save",
   "detail_cta_successful": "Successfully saved!",
   "index_login": "Log In",

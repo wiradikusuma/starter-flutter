@@ -1,8 +1,10 @@
 import 'package:app/env.dart';
 import 'package:app/l10n/strings.dart';
 import 'package:app/routes.dart';
+import 'package:app/service/user_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 
 late Env temp;
@@ -15,10 +17,15 @@ void run(Env env) async {
   // Keep native splash screen up until app is finished bootstrapping
   FlutterNativeSplash.preserve(widgetsBinding: WidgetsFlutterBinding.ensureInitialized());
 
+  _initServices();
   runApp(const MyApp());
 
   // Remove splash screen when bootstrap is complete
   FlutterNativeSplash.remove();
+}
+
+void _initServices() {
+  GetIt.I.registerSingleton<UserService>(UserService());
 }
 
 class MyApp extends StatelessWidget {

@@ -93,11 +93,29 @@ abstract class S {
     Locale('zh')
   ];
 
+  /// No description provided for @error_required.
+  ///
+  /// In en, this message translates to:
+  /// **'{field} is required'**
+  String error_required(Object field);
+
   /// Demonstration of Flutter l18n support.
   ///
   /// In en, this message translates to:
   /// **'Hello {name}!'**
   String greeting(String name);
+
+  /// No description provided for @detail_fyi.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi {name}, please edit your details below.'**
+  String detail_fyi(Object name);
+
+  /// No description provided for @detail_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get detail_name;
 
   /// No description provided for @detail_cta.
   ///

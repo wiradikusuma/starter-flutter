@@ -12,9 +12,13 @@ dependencies:
   flutter_adaptive_scaffold: ^0.1.0
   flutter_localizations:
     sdk: flutter
+  flutter_mobx: ^2.0.6+5
   flutter_native_splash: ^2.2.17
+  form_field_validator: ^1.1.0
+  get_it: ^7.2.0
   go_router: ^6.0.3
   intl: any
+  mobx: ^2.1.3+1
 
 dependency_overrides:
   # flutter_flavorizr@2.1.x and flutter_launcher_icons@0.11.x requires image@3.x while
@@ -34,6 +38,7 @@ dev_dependencies:
   go_router_builder: any
   integration_test:
     sdk: flutter
+  mobx_codegen: ^2.1.1
 
 flutter:
   generate: true

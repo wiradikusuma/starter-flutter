@@ -1,9 +1,12 @@
 import 'package:app/l10n/strings.dart';
 import 'package:app/main.dart';
 import 'package:app/routes.dart';
+import 'package:app/service/user_service.dart';
 import 'package:app/util/layout_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:get_it/get_it.dart';
 
 class IndexPage extends StatefulWidget {
   const IndexPage({super.key});
@@ -13,6 +16,8 @@ class IndexPage extends StatefulWidget {
 }
 
 class _State extends State<IndexPage> {
+  final _service = GetIt.I<UserService>();
+
   var _selectedIndex = 0;
 
   @override
@@ -36,14 +41,17 @@ class _State extends State<IndexPage> {
       case 0:
         return SafeArea(
           child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Text('Index. Logged in: $tempLoggedIn'),
-                _buttons(context).bPadded(),
-                _info(context),
-                _localizedMessage(context).vPadded(),
-                _alwaysInFrench(context),
-              ],
+            child: Observer(
+              builder: (context) => Column(
+                children: [
+                  Text('Index. Logged in: $tempLoggedIn'),
+                  _buttons(context).bPadded(),
+                  ..._service.users.map((e) => Text('Welcome ${e.name}')).toList(),
+                  _info(context),
+                  _localizedMessage(context).vPadded(),
+                  _alwaysInFrench(context),
+                ],
+              ),
             ),
           ),
         );

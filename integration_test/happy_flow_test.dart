@@ -1,9 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:integration_test/integration_test.dart';
 import 'package:app/env.dart';
 import 'package:app/l10n/strings.dart';
 import 'package:app/main.dart' as app;
+import 'package:app/service/user_service.dart';
+import 'package:app/widget/support/input.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:get_it/get_it.dart';
+import 'package:integration_test/integration_test.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -13,6 +16,7 @@ void main() {
   setUpAll(() async {
     s = await S.delegate.load(const Locale('en'));
     app.temp = Env(server: 'TESTING');
+    GetIt.I.registerSingleton<UserService>(UserService());
   });
 
   setUp(() {
@@ -59,6 +63,8 @@ void main() {
       await _boot(tester);
 
       await tester.tap(find.byKey(const Key('Detail 1')));
+      await tester.pumpAndSettle();
+      await tester.enterText(find.byType(Input), 'Superman');
       await tester.pumpAndSettle();
       await tester.tap(find.byType(ElevatedButton));
       await tester.pumpAndSettle();
