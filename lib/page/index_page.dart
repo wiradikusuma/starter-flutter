@@ -124,7 +124,7 @@ class _State extends State<IndexPage> {
   }
 
   void _goDetail1(BuildContext context) {
-    const DetailRoute(id: '1').go(context);
+    const DetailRoute(code: '1').go(context);
   }
 
   _goAuthenticated(BuildContext context) {

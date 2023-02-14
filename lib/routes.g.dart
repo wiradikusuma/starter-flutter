@@ -20,7 +20,7 @@ GoRoute get $indexRoute => GoRouteData.$route(
           factory: $AuthenticatedRouteExtension._fromState,
         ),
         GoRouteData.$route(
-          path: 'detail/:id',
+          path: 'detail/:code',
           factory: $DetailRouteExtension._fromState,
         ),
         GoRouteData.$route(
@@ -57,11 +57,11 @@ extension $AuthenticatedRouteExtension on AuthenticatedRoute {
 
 extension $DetailRouteExtension on DetailRoute {
   static DetailRoute _fromState(GoRouterState state) => DetailRoute(
-        id: state.params['id']!,
+        code: state.params['code']!,
       );
 
   String get location => GoRouteData.$location(
-        '/detail/${Uri.encodeComponent(id)}',
+        '/detail/${Uri.encodeComponent(code)}',
       );
 
   void go(BuildContext context) => context.go(location, extra: this);

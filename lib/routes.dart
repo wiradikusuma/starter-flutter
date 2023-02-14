@@ -34,7 +34,7 @@ abstract class _AuthenticatedRoute extends GoRouteData {
       path: 'authenticated',
     ),
     TypedGoRoute<DetailRoute>(
-      path: 'detail/:id',
+      path: 'detail/:code',
     ),
     TypedGoRoute<LoginRoute>(
       path: 'login',
@@ -68,12 +68,12 @@ class AuthenticatedRoute extends _AuthenticatedRoute {
 
 @immutable
 class DetailRoute extends GoRouteData {
-  final String id;
+  final String code;
 
-  const DetailRoute({required this.id});
+  const DetailRoute({required this.code});
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => DetailPage(id: id);
+  Widget build(BuildContext context, GoRouterState state) => DetailPage(code: code);
 }
 
 @immutable

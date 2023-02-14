@@ -5,9 +5,9 @@ import 'package:app/util/routing_utils.dart';
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatefulWidget {
-  final String id;
+  final String code;
 
-  const DetailPage({super.key, required this.id});
+  const DetailPage({super.key, required this.code});
 
   @override
   State<DetailPage> createState() => _State();
@@ -20,7 +20,7 @@ class _State extends State<DetailPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detail ${widget.id}. Logged in: $tempLoggedIn'),
+        title: Text('Detail ${widget.code}. Logged in: $tempLoggedIn'),
       ),
       backgroundColor: Colors.red,
       body: Center(
